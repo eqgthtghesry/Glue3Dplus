@@ -38,4 +38,4 @@ Here is the detailed breakdown of all modifications:
 
 ---
 
-*Commit Note: These changes collectively result in a significantly smaller project footprint and much higher frame rates in TurboWarp, though the new function addon module may require further stabilization in subsequent patches.*
+*Commit Note: These changes collectively result in a significantly smaller project footprint and much higher frame rates in TurboWarp, though the new function addon module may require further stabilization in subsequent patches. Based on version 1.4 of GoldenYoshi924*
