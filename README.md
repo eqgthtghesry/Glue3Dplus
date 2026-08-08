@@ -1,9 +1,8 @@
 # Glue3d+: a more optimized engine with more functionality than any other version of Glue3d.
 
-
 # Engine Update: Performance Overhaul & Feature Expansion
 
-This update introduces massive performance improvements, structural refactoring, and new features to the game engine. A specific focus was placed on optimizing execution for the **TurboWarp runtime**, reducing overhead in the custom interpreter, and minimizing project file size.
+This Mod introduces massive performance improvements, structural refactoring, and new features to the game engine. A specific focus was placed on optimizing execution for the **TurboWarp runtime**, reducing overhead in the custom interpreter, and minimizing project file size. Version 1.6 marks a major milestone with the introduction of a scene management system and more flexible editing tools.
 
 Here is the detailed breakdown of all modifications:
 
@@ -35,6 +34,27 @@ Here is the detailed breakdown of all modifications:
 ## ✨ New Features
 *   **Save/Load System:** Added file import and export functionality, allowing users to save and load their states externally.
 *   **Function Addon Module:** Introduced a new function addon module to extend engine capabilities *(Note: currently experimental and known to be glitchy)*.
+*   **More Permissive Camera Angle:** Expanded camera angle limits from `-45° to 45°` to `-125° to 125°`.
+*   **Custom Grid Snap:** Added a custom grid snapping system. *(Note: Currently works only with 3D models, 2D models, and segments.)*
+*   **New Block Category (`Scene`):** A whole new category dedicated to scene management is introduced, featuring 4 new blocks:
+    *   **`set loading screen`**: Configures the start and end costume numbers to display for the loading screen.
+    *   **`load scene`**: Loads a scene saved in a `scenemap` file type by simply entering the name of the scene to load.
+    *   **`start loading screen`**: Starts the loading screen previously configured with `set loading screen`. Can be very useful to hide the visual transition when using `load scene`.
+    *   **`stop loading screen`**: Stops the loading screen. Also works if the `start loading screen` block was triggered in another scene.
+
+## ⚠️ Warnings & Release Notes
+
+> [!CAUTION]
+> **Loading Screen Configuration**  
+> If you use the `start loading screen` block without configuring it beforehand with `set loading screen`, you risk getting weird or unexpected visual results. Always make sure to set up the loading screen configuration before starting it.
+
+> [!WARNING]
+> **Script Launch Delay**  
+> The *visual* loading of scenes is fast, but the *script* launching might have a slight delay. You may need to add a `wait 0` block after `stop loading screen` to ensure all scripts in the new scene are properly initialized before continuing execution.
+
+> [!NOTE]
+> **Camera Angle Limits**  
+> The camera angle has been expanded to `-125° to 125°`, but it is not a full 90° symmetrical range. This limit is intentional to prevent visual bugs that occur at extreme angles.
 
 ---
 
